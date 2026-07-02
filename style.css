@@ -1,0 +1,408 @@
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@700&family=Raleway:wght@300;400;500;600&display=swap');
+
+:root {
+    --bg: #F4F0E6;
+    --nav-bg: #EDE9DE;
+    --fg: #1C1714;
+    --accent: #6B4C2A;
+    --border: #D4C9B5;
+    --muted: #8C7B6B;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+body {
+    background-color: var(--bg);
+    color: var(--fg);
+    font-family: 'Raleway', -apple-system, BlinkMacSystemFont, sans-serif;
+    margin: 0;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* ── Navigation ───────────────────────────────────── */
+
+nav {
+    width: 100%;
+    background-color: #1A1A1A;
+    border-bottom: none;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    display: flex;
+    justify-content: center;
+    padding: 18px 20px;
+}
+
+.nav-container {
+    display: flex;
+    gap: 36px;
+    width: 100%;
+    max-width: 750px;
+    justify-content: center;
+}
+
+nav a {
+    color: rgba(255, 255, 255, 0.45);
+    text-decoration: none;
+    font-size: 0.7rem;
+    font-weight: 500;
+    letter-spacing: 2.5px;
+    text-transform: uppercase;
+    transition: color 0.2s;
+    font-family: 'Raleway', sans-serif;
+}
+
+nav a:hover,
+nav a[aria-current="page"] {
+    color: #F4F0E6;
+}
+
+/* ── Main Column ──────────────────────────────────── */
+
+main {
+    width: 100%;
+    max-width: 750px;
+    padding: 72px 24px 96px;
+    text-align: center;
+    flex: 1;
+}
+
+/* ── Brand Title ──────────────────────────────────── */
+
+.brand-title {
+    font-family: 'Ubuntu', sans-serif;
+    font-size: clamp(2.4rem, 5.5vw, 3.4rem);
+    font-weight: 700;
+    color: var(--fg);
+    letter-spacing: 0.02em;
+    margin: 0 0 12px;
+    line-height: 1;
+}
+
+
+/* ── Divider ──────────────────────────────────────── */
+
+.divider {
+    width: 48px;
+    height: 1px;
+    background: var(--border);
+    margin: 0 auto 72px;
+}
+
+/* ── Release Section ──────────────────────────────── */
+
+.release-label {
+    font-family: 'Raleway', sans-serif;
+    font-size: 0.65rem;
+    font-weight: 600;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin: 0 0 32px;
+}
+
+.release-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0;
+    margin-bottom: 80px;
+}
+
+.release-card:last-child {
+    margin-bottom: 0;
+}
+
+.artist-name {
+    margin: 0 0 10px;
+    line-height: 1;
+}
+
+.vox-femme-name {
+    /* TODO: replace with Abramo font once available — not on Google Fonts */
+    font-family: 'Raleway', sans-serif;
+    font-size: 1.4rem;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--fg);
+    opacity: 0.85;
+}
+
+.album-cover {
+    width: 100%;
+    max-width: 380px;
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
+    display: block;
+    border: 1px solid var(--border);
+    transition: opacity 0.3s;
+}
+
+.album-cover:hover {
+    opacity: 0.92;
+}
+
+.album-info {
+    margin-top: 28px;
+    text-align: center;
+}
+
+.artist-logo {
+    display: block;
+    width: 200px;
+    margin: 0 auto 10px;
+    opacity: 0.82;
+}
+
+.album-title {
+    font-family: 'Raleway', sans-serif;
+    font-size: clamp(1.2rem, 3vw, 1.6rem);
+    font-weight: 300;
+    color: var(--fg);
+    margin: 0 0 28px;
+    line-height: 1.3;
+    letter-spacing: 0.18em;
+}
+
+.listen-links {
+    display: flex;
+    gap: 12px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.soundcloud-link {
+    display: inline-block;
+    font-family: 'Raleway', sans-serif;
+    font-size: 0.68rem;
+    font-weight: 600;
+    letter-spacing: 2.5px;
+    text-transform: uppercase;
+    color: var(--accent);
+    text-decoration: none;
+    border: 1px solid var(--accent);
+    padding: 10px 28px;
+    transition: background 0.2s, color 0.2s;
+}
+
+.soundcloud-link:hover {
+    background: var(--accent);
+    color: var(--bg);
+}
+
+/* ── Artists List Page ────────────────────────────── */
+
+.artist-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    text-align: left;
+}
+
+.artist-item {
+    border-top: 1px solid var(--border);
+}
+
+.artist-item:last-child {
+    border-bottom: 1px solid var(--border);
+}
+
+.artist-link {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 28px 0;
+    text-decoration: none;
+    color: var(--fg);
+    transition: color 0.2s;
+}
+
+.artist-link:hover {
+    color: var(--accent);
+}
+
+.artist-list-name {
+    font-family: 'Raleway', sans-serif;
+    font-size: clamp(1.2rem, 3vw, 1.6rem);
+    font-weight: 300;
+    letter-spacing: 0.18em;
+}
+
+.artist-arrow {
+    font-size: 1rem;
+    color: var(--muted);
+    transition: color 0.2s;
+}
+
+.artist-link:hover .artist-arrow {
+    color: var(--accent);
+}
+
+/* ── Artist Profile Page ──────────────────────────── */
+
+.artist-profile {
+    display: flex;
+    gap: 56px;
+    align-items: flex-start;
+    text-align: left;
+}
+
+.profile-art {
+    width: 300px;
+    flex-shrink: 0;
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
+    border: 1px solid var(--border);
+}
+
+.profile-info {
+    flex: 1;
+    padding-top: 4px;
+}
+
+.profile-artist-name {
+    font-family: 'Raleway', sans-serif;
+    font-size: 0.68rem;
+    font-weight: 600;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin: 0 0 12px;
+}
+
+.profile-logo {
+    display: block;
+    width: 220px;
+    margin: 0 0 16px;
+    opacity: 0.82;
+}
+
+.profile-release-title {
+    font-family: 'Raleway', sans-serif;
+    font-size: clamp(1rem, 2.5vw, 1.3rem);
+    font-weight: 300;
+    color: var(--fg);
+    margin: 0 0 40px;
+    line-height: 1.3;
+    letter-spacing: 0.18em;
+}
+
+.link-tree {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.link-tree li {
+    border-top: 1px solid var(--border);
+}
+
+.link-tree li:last-child {
+    border-bottom: 1px solid var(--border);
+}
+
+.link-tree a {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 16px 0;
+    font-family: 'Raleway', sans-serif;
+    font-size: 0.68rem;
+    font-weight: 600;
+    letter-spacing: 2.5px;
+    text-transform: uppercase;
+    color: var(--fg);
+    text-decoration: none;
+    transition: color 0.2s;
+}
+
+.link-tree a:hover {
+    color: var(--accent);
+}
+
+.link-arrow {
+    color: var(--muted);
+    font-size: 0.85rem;
+    letter-spacing: 0;
+    transition: color 0.2s;
+}
+
+.link-tree a:hover .link-arrow {
+    color: var(--accent);
+}
+
+/* ── Coming Soon ──────────────────────────────────── */
+
+.coming-soon {
+    font-family: 'Raleway', sans-serif;
+    font-size: 0.68rem;
+    font-weight: 600;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin: 0;
+}
+
+/* ── Mobile ───────────────────────────────────────── */
+
+@media (max-width: 600px) {
+    nav {
+        padding: 14px 16px;
+    }
+
+    .nav-container {
+        gap: 20px;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    nav a {
+        font-size: 0.65rem;
+        letter-spacing: 1.5px;
+    }
+
+    main {
+        padding: 48px 18px 72px;
+    }
+
+    .brand-title {
+        font-size: clamp(2rem, 9vw, 3rem);
+    }
+
+    .album-cover {
+        max-width: 100%;
+    }
+
+    .album-title,
+    .artist-list-name,
+    .profile-release-title {
+        letter-spacing: 0.08em;
+    }
+
+    .soundcloud-link {
+        padding: 10px 16px;
+        font-size: 0.62rem;
+        letter-spacing: 1.5px;
+    }
+
+    .artist-profile {
+        flex-direction: column;
+        gap: 32px;
+    }
+
+    .profile-art {
+        width: 100%;
+    }
+
+    .profile-logo {
+        width: 160px;
+    }
+}
